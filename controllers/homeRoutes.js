@@ -53,3 +53,5 @@ router.get('/viewAccount', withAuth, async (req, res) => {
 // app.use((req, res) => {
 //     res.status(404).send('Sorry, we cannot find that!');
 //   });
+
+module.exports = router;

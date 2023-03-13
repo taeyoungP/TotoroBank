@@ -13,7 +13,7 @@ Account.init(
         autoIncrement: true,
       },
       balance: {
-        type: DataTypes.FLOAT(1, 2),
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       user_id: {
