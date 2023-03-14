@@ -12,6 +12,9 @@ Account.init(
         primaryKey: true,
         autoIncrement: true,
       },
+      //type: {
+//
+      //}, 
       balance: {
         type: DataTypes.INTEGER,
         allowNull: false,
