@@ -1,65 +1,50 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<script src="https://cdn.tailwindcss.com"></script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.1/tailwind.min.css">
 	<title>TotoroBank</title>
-	<link rel="stylesheet" href="styles.css" />
+	<link rel="icon"
+		href="https://nicedecal.com/wp-content/uploads/2022/07/Totoro-Anime-2-Decal-Sticker__04178.1510985885.jpg"
+		type="totoro-icon" />
 </head>
 
-<body class="text-gray-600">
-	<div>
-		<div>
-			<nav>
-				<div>
-					<h1>
-						<a class="text-4xl p-4 flex justify-center" href="/">Welcome to TotoroBank!</a>
-					</h1>
-				</div>
-			</nav>
-		</div>
-</body>
+<nav>
+	<h1 class="text-4xl p-4 text-black flex justify-center font-bold">Welcome to TotoroBank!</h1>
+</nav>
 
-<body class="bg-gray-100">
-	<div class="container mx-auto px-4 py-12">
-		<div class="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
-			<div class="md:flex">
-				<div class="w-full p-4 px-5 py-5">
-					<h1 class="text-gray-700 font-bold text-2xl mb-2">Create an Account</h1>
-					<form>
-						<div class="mb-4">
-							<label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
-							<input id="name" type="text"
-								class="w-full px-3 py-2 border border-gray-400 rounded-lg focus:outline-none focus:shadow-outline-blue focus:border-blue-300"
-								placeholder="John Doe">
-						</div>
-						<div class="mb-4">
-							<label for="email" class="block text-gray-700 font-bold mb-2">Email Address</label>
-							<input id="email" type="email"
-								class="w-full px-3 py-2 border border-gray-400 rounded-lg focus:outline-none focus:shadow-outline-blue focus:border-blue-300"
-								placeholder="you@example.com">
-						</div>
-						<div class="mb-4">
-							<label for="password" class="block text-gray-700 font-bold mb-2">Password</label>
-							<input id="password" type="password"
-								class="w-full px-3 py-2 border border-gray-400 rounded-lg focus:outline-none focus:shadow-outline-blue focus:border-blue-300"
-								placeholder="********">
-						</div>
-						<div class="mb-4">
-							<label for="password_confirmation" class="block text-gray-700 font-bold mb-2">Confirm Password</label>
-							<input id="password_confirmation" type="password"
-								class="w-full px-3 py-2 border border-gray-400 rounded-lg focus:outline-none focus:shadow-outline-blue focus:border-blue-300"
-								placeholder="********">
-						</div>
-						<button type="submit"
-							class="w-full py-3 bg-yellow-700 text-white font-bold rounded hover:bg-yellow-500 focus:outline-none focus:shadow-outline-blue">Create
-							Account</button>
-					</form>
-				</div>
+<body class="bg-gray-100 bg-cover bg-center h-screen"
+	style="background-image: url('/public/assets/catbus-taeyoung.png');">
+	<div class="flex justify-center items-center h-full">
+
+		<form class="w-full max-w-md bg-white rounded-lg px-6 py-8 shadow-md">
+			<h2 class="text-2xl font-bold mb-4">Create Account</h2>
+			<div class="mb-4">
+				<label class="block text-gray-700 font-bold mb-2" for="username">Username</label>
+				<input class="border border-gray-400 p-2 w-full rounded-lg" type="text" id="username" name="username"
+					placeholder="totoro88">
 			</div>
-		</div>
+			<div class="mb-4">
+				<label class="block text-gray-700 font-bold mb-2" for="email">Email</label>
+				<input class="border border-gray-400 p-2 w-full rounded-lg" type="email" id="email" name="email"
+					placeholder="ex. Mei Kusakabe">
+			</div>
+			<div class="mb-4">
+				<label class="block text-gray-700 font-bold mb-2" for="password">Password</label>
+				<input class="border border-gray-400 p-2 w-full rounded-lg" type="password" id="password" name="password"
+					placeholder="*******">
+			</div>
+			<div class="mb-6">
+				<label class="block text-gray-700 font-bold mb-2" for="confirm-password">Confirm Password</label>
+				<input class="border border-gray-400 p-2 w-full rounded-lg" type="password" id="confirm-password"
+					name="confirm-password" placeholder="*******">
+			</div>
+			<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Create
+				Account</button>
+		</form>
 	</div>
 </body>
 
