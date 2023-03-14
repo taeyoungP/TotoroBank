@@ -7,44 +7,78 @@ const { User, Account, Transaction } = require('../models');
 const withAuth = require('../utils/auth');
 
 //Initial Page (LOGIN)
-router.get('/', async (req, res) => {
+
+router.get('/', async (req, res) => { //If logged in redirect to homepage, else redirect to login page
     if (req.session.logged_in) {
         res.redirect('/homepage');
         return;
     }
 
     res.render('login'); //render login.handlebars
+
 });
 
-// When user loggedin 
+router.get('/login', async (req, res) => {
+    res.render('login'); //render login.handlebars
+});
+
+router.get('/signup', async (req, res) => {
+    res.render('signup'); //render signup.handlebars
+});
+
+
+// When user loggedin, leads to homepage, which view account page 
 router.get('/homepage', withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: [{ Model: Account }]
+            include: [{
+                model: Account,
+                include: {
+                    model: Transaction
+                }
+            }
+            ],
         });
 
         const user = userData.get({ plain: true });
 
-        res.render('homepage', {
+        res.render('homepage', { //render homepage.handlebars for loggedin user
             ...user,
             logged_in: true
         });
 
     } catch (err) {
-        res.status(500).json(err);  
+        res.status(500).json(err);
     }
 });
 
-router.get('/viewAccount', withAuth, async (req, res) => {
+/*router.get('/account', withAuth, async (req, res) => {
     try {
-        const accountData = await Account.findAll({
-            include: [{ model: User }, { model: Transaction }]
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{
+                model: Account,
+                include: {
+                    model: Transaction
+                }
+            }
+            ],
         });
-    } catch (err){
-        res.status(500).json(err);  
+
+
+        const user = userData.get({ plain: true });
+
+        res.render('account', { //render account.handlebars for loggedin user
+            ...user,
+            logged_in: true
+        });
+
+        //res.status(200).json(userData);
+    } catch (err) {
+        res.status(500).json(err);
     }
-});
+});*/
 
 // added routes for handling error
 
@@ -53,3 +87,5 @@ router.get('/viewAccount', withAuth, async (req, res) => {
 // app.use((req, res) => {
 //     res.status(404).send('Sorry, we cannot find that!');
 //   });
+
+module.exports = router;
