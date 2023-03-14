@@ -30,7 +30,13 @@ User.init(
       allowNull: false,
       validate: {
         len: [8],
-        isIn: ["^[a-z]+$",'i'] //regex, allowing numeric, alphabets & special chars
+        isComplex(value) {
+        // Password must contain at least one uppercase, one lowercase, one number, and one special character
+        const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
+        if (!regex.test(value)) {
+          throw new Error('Password must contain at least one uppercase, one lowercase, one number, and one special character');
+        }
+      }
       },
     },
   },

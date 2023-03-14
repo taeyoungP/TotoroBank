@@ -43,7 +43,7 @@ Transaction.init(
       timestamps: false,
       freezeTableName: true,
       underscored: true,
-      modelName: 'account',
+      modelName: 'transaction',
     }
   );
   

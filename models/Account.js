@@ -12,8 +12,11 @@ Account.init(
         primaryKey: true,
         autoIncrement: true,
       },
+      //type: {
+//
+      //}, 
       balance: {
-        type: DataTypes.FLOAT(1, 2),
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       user_id: {
