@@ -1,12 +1,20 @@
-#totoro-icon {
-    height: 35px;
-    width: 35px;
+body {
+    background-image: url(https://studioghiblimovies.com/wp-content/uploads/2019/02/d6qy8ki-177cdc00-5d5b-4ab0-ba9b-1346253df5a81-1024x640.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-nav {
-    display: flex;
+#totoro-icon {
+    height: 80px;
+    width: 80px;
 }
 
 main {
     display: flex ;
+}
+
+#catbus {
+    width: 400px;
+    height: 200px;
 }
