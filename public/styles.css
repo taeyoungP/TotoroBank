@@ -1,12 +1,14 @@
 #totoro-icon {
-    height: 35px;
-    width: 35px;
+  height: 35px;
+  width: 35px;
 }
 
 nav {
-    display: flex;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 main {
-    display: flex ;
+  display: flex;
 }
