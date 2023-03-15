@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.1/tailwind.min.css">
+    <title>TotoroBank</title>
+    <link rel="icon"
+        href="https://nicedecal.com/wp-content/uploads/2022/07/Totoro-Anime-2-Decal-Sticker__04178.1510985885.jpg"
+        type="totoro-icon" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div>
+        <div>
+            <nav>
+                <div>
+                    <h1>
+                        <p class="text-4xl p-6 font-bold font-bangers ">TotoroBank</p>
+                    </h1>
+                </div>
+            </nav>
+        </div>
+        <nav class="flex items-center justify-end bg-yellow-500 text-white">
+            <div class="mx-8 py-2">
+                <a href="/public/account.html" class="text-white-300 hover:text-black">Home</a>
+            </div>
+            <div class="mx-8 py-2">
+                <a href="#" class="text-white-300 hover:text-black">Deposits</a>
+            </div>
+            <div class="mx-8 py-2">
+                <a href="#" class="text-white-300 hover:text-black">Transfers</a>
+            </div>
+            <div class="mx-8 py-2">
+                <a href="#" class="text-white-300 hover:text-black">Settings</a>
+            </div>
+            <div class="mx-8 py-2">
+                <a href="/public/login.html" class="text-white-300 hover:text-black">Logout</a>
+            </div>
+        </nav>
+        <div class="container mx-auto px-4 py-8">
+            <h1 class="text-2xl font-bold mb-4"> Deposit and Withdraw </h1>
+
+            <div class="flex justify-between items-center border-b-2 pb-4 mb-8">
+                <h2 class="text-xl font-bold" id="account-balance">Account Balance:</h2>
+                <span class="text-xl font-bold">$10,000.00</span>
+            </div>
+
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-bold">Deposit:</h3>
+                <form class="flex items-center" action="#" method="POST">
+                    <label for="deposit-amount" class="sr-only">Deposit amount:</label>
+                    <input type="number" id="deposit-amount" name="deposit-amount" placeholder="Enter deposit amount"
+                        class="px-4 py-2 border rounded-l-md focus:outline-none focus:ring focus:ring-blue-400">
+                    <button type="submit" id="depositBtn"
+                        class="px-4 py-2 bg-blue-600 text-white rounded-r-md hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400">Deposit</button>
+                </form>
+            </div>
+
+            <div class="flex justify-between items-center">
+                <h3 class="text-lg font-bold">Withdraw:</h3>
+                <form class="flex items-center" action="#" method="POST">
+                    <label for="withdraw-amount" class="sr-only">Withdraw amount:</label>
+                    <input type="number" id="withdraw-amount" name="withdraw-amount" placeholder="Enter withdraw amount"
+                        class="px-4 py-2 border rounded-l-md focus:outline-none focus:ring focus:ring-blue-400">
+                    <button type="submit" id="withdrawBtn"
+                        class="px-4 py-2 bg-blue-600 text-white rounded-r-md hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400">Withdraw</button>
+                </form>
+            </div>
+        </div>
+
+</body>
+
+</html>
