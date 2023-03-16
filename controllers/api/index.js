@@ -1,9 +1,11 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-const postRoutes = require('./postRoutes');
+const accountRoutes = require('./accountRoutes');
+const depositRoutes = require('./depositRoutes');
 
 
 router.use('/users', userRoutes);
-router.use('/posts', postRoutes);
+router.use('/accounts', accountRoutes);
+router.use('/deposits', depositRoutes);
 
 module.exports = router;

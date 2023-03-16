@@ -1,12 +1,31 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Account, Transaction } = require('../../models');
 
-//router.put(/transfer/:id/:target_id ){ User.update { req.session.user_id ~ data }}
-// user.update (target_id, ~data)
+
 
 router.get('/', async (req, res) => { //get all users
     try {
-      const userData = await User.findAll();
+      const userData = await User.findAll({
+        include: [{
+          model: Account,
+          include: {
+            model: Transaction
+          }
+        }]
+      });
+  
+        res.status(200).json(userData);
+      
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  });
+
+  router.get('/:id', async (req, res) => { //get all users
+    try {
+      const userData = await User.findByPk(req.params.id, {
+        include: [{ model: Account }]
+      });
   
         res.status(200).json(userData);
       
