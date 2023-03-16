@@ -13,17 +13,16 @@
 </head>
 
 <nav>
-	<h1 class="text-4xl p-4 text-black flex justify-center font-bold">Welcome to TotoroBank!</h1>
+	<h1 class="text-4xl p-4 text-white flex justify-left font-bold">Welcome to TotoroBank!</h1>
 </nav>
 
-<body class="bg-gray-100 bg-cover bg-center h-screen"
-	style="background-image: url('/public/assets/catbus-taeyoung.png');">
-	<div class="flex justify-center items-center h-full">
+<body class="bg-gray-100 bg-cover bg-center h-screen" style="background-image: url('/public/assets/totoro-tree.jpg');">
+	<div class="flex items-start p-40  h-screen">
 
-		<form class="w-full max-w-md bg-white rounded-lg px-6 py-8 shadow-md">
+		<form class="w-full md:w-1/2 lg:w-1/3 bg-white rounded-lg px-6 py-8 shadow-md">
 			<h2 class="text-2xl font-bold mb-4">Create Account</h2>
 			<div class="mb-4">
-				<label class="block text-gray-700 font-bold mb-2" for="email">Name</label>
+				<label class="block text-gray-700 font-bold mb-2" for="name">Name</label>
 				<input class="border border-gray-400 p-2 w-full rounded-lg" type="name" id="name" name="name"
 					placeholder="ex. Mei Kusakabe">
 			</div>
@@ -42,7 +41,8 @@
 				<input class="border border-gray-400 p-2 w-full rounded-lg" type="password" id="confirm-password"
 					name="confirm-password" placeholder="*******">
 			</div>
-			<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Create
+			<button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"
+				type="submit">Create
 				Account</button>
 		</form>
 	</div>

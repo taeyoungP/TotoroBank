@@ -10,7 +10,7 @@
     <link rel="icon"
         href="https://nicedecal.com/wp-content/uploads/2022/07/Totoro-Anime-2-Decal-Sticker__04178.1510985885.jpg"
         type="totoro-icon" />
-    <link rel="stylesheet" href="styles.css" />
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
 </head>
 
 <body>
@@ -53,21 +53,15 @@
                 <h3 class="text-lg font-bold">Deposit:</h3>
                 <form class="flex items-center" action="#" method="POST">
                     <label for="deposit-amount" class="sr-only">Deposit amount:</label>
+                    <select id="account" name="account"
+                        class="mr-4 px-4 py-2 border rounded-md focus:outline-none  focus:ring-blue-400">
+                        <option value="account1">Checking</option>
+                        <option value="account2">Savings</option>
+                    </select>
                     <input type="number" id="deposit-amount" name="deposit-amount" placeholder="Enter deposit amount"
                         class="px-4 py-2 border rounded-l-md focus:outline-none focus:ring focus:ring-blue-400">
                     <button type="submit" id="depositBtn"
                         class="px-4 py-2 bg-blue-600 text-white rounded-r-md hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400">Deposit</button>
-                </form>
-            </div>
-
-            <div class="flex justify-between items-center">
-                <h3 class="text-lg font-bold">Withdraw:</h3>
-                <form class="flex items-center" action="#" method="POST">
-                    <label for="withdraw-amount" class="sr-only">Withdraw amount:</label>
-                    <input type="number" id="withdraw-amount" name="withdraw-amount" placeholder="Enter withdraw amount"
-                        class="px-4 py-2 border rounded-l-md focus:outline-none focus:ring focus:ring-blue-400">
-                    <button type="submit" id="withdrawBtn"
-                        class="px-4 py-2 bg-blue-600 text-white rounded-r-md hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400">Withdraw</button>
                 </form>
             </div>
         </div>
