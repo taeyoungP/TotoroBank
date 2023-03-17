@@ -2,55 +2,60 @@
 // (/homepage => main page once user logged in)
 // (/viewAccount => user's account information) (accessible from nav bar)
 
-const router = require('express').Router();
-const { User, Account, Transaction } = require('../models');
-const withAuth = require('../utils/auth');
+const router = require("express").Router();
+const { User, Account, Transaction } = require("../models");
+const withAuth = require("../utils/auth");
 
 //Initial Page (LOGIN)
 
-router.get('/', async (req, res) => { //If logged in redirect to homepage, else redirect to login page
-    if (req.session.logged_in) {
-        res.redirect('/homepage');
-        return;
-    }
+router.get("/", async (req, res) => {
+  //If logged in redirect to homepage, else redirect to login page
+  if (req.session.logged_in) {
+    res.redirect("/homepage");
+    return;
+  }
 
-    res.render('login'); //render login.handlebars
-
+  res.render("login"); //render login.handlebars
 });
 
-router.get('/login', async (req, res) => {
-    res.render('login'); //render login.handlebars
+router.get("/deposit", async (req, res) => {
+  res.render("deposit"); //render login.handlebars
 });
 
-router.get('/signup', async (req, res) => {
-    res.render('signup'); //render signup.handlebars
+router.get("/login", async (req, res) => {
+  res.render("login"); //render login.handlebars
 });
 
+router.get("/signup", async (req, res) => {
+  res.render("signup"); //render signup.handlebars
+});
 
-// When user loggedin, leads to homepage, which view account page 
-router.get('/homepage', withAuth, async (req, res) => {
-    try {
-        const userData = await User.findByPk(req.session.user_id, {
-            attributes: { exclude: ['password'] },
-            include: [{
-                model: Account,
-                include: {
-                    model: Transaction
-                }
-            }
-            ],
-        });
+// When user loggedin, leads to homepage, which view account page
+router.get("/homepage", withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [
+        {
+          model: Account,
+          include: {
+            model: Transaction,
+          },
+        },
+      ],
+    });
 
-        const user = userData.get({ plain: true });
+    console.log(req.session.user_id);
+    const user = userData.get({ plain: true });
 
-        res.render('homepage', { //render homepage.handlebars for loggedin user
-            ...user,
-            logged_in: true
-        });
-
-    } catch (err) {
-        res.status(500).json(err);
-    }
+    res.render("homepage", {
+      //render homepage.handlebars for loggedin user and sending user data
+      ...user,
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 /*router.get('/account', withAuth, async (req, res) => {

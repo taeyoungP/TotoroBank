@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Deposit",
+    "transaction_desc": "Deposited $100.00",
+    "amount": 100.0,
+    "account_id": 1
+  },
+  {
+    "title": "Transfer",
+    "transaction_desc": "Transferred $350.00",
+    "amount": -350.0,
+    "account_id": 1
+  },
+  {
+    "title": "Withdrawal",
+    "transaction_desc": "Withdrew $100.00",
+    "amount": -100.0,
+    "account_id": 1
+  },
+  {
+    "title": "Deposit",
+    "transaction_desc": "Deposited $85.00",
+    "amount": 100.0,
+    "account_id": 2
+  },
+  {
+    "title": "Deposit",
+    "transaction_desc": "Deposited $50.00",
+    "amount": 50.0,
+    "account_id": 2
+  },
+  {
+    "title": "Withdrawal",
+    "transaction_desc": "Withdrew $150.00",
+    "amount": -150.0,
+    "account_id": 3
+  }
+]

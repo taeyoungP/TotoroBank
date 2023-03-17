@@ -1,0 +1,99 @@
+<!-- account -->
+<body
+  class="text-gray-600 text-center bg-no-repeat bg-cover bg-center h-screen"
+  style="background-image: url('https://digwallpapers.com/wallpapers/full/d/2/5/26229-3840x2160-my-neighbor-totoro-wallpaper-image-desktop-4k.jpg');"
+>
+
+  <div>
+    <div>
+      <nav>
+        <div>
+          <h1>
+            <p class="text-4xl p-6 font-bold font-bangers">TotoroBank</p>
+          </h1>
+        </div>
+      </nav>
+    </div>
+    <nav class="flex items-center justify-end bg-yellow-500 text-white">
+      <div class="mx-8 py-2">
+        <a href="/homepage" class="text-white-300 hover:text-black">Home</a>
+      </div>
+      <div class="mx-8 py-2">
+        <a href="/deposit" class="text-white-300 hover:text-black">Deposits</a>
+      </div>
+      <div class="mx-8 py-2">
+        <a href="#" class="text-white-300 hover:text-black">Transfers</a>
+      </div>
+      <div class="mx-8 py-2">
+        <a href="#" class="text-white-300 hover:text-black">Settings</a>
+      </div>
+      <div class="mx-8 py-2">
+        <button
+          id="logout"
+          class="text-white-300 hover:text-black"
+        >Logout</button>
+      </div>
+    </nav>
+    <main class="md:flex flex items-stretch place-content-center">
+      <!-- each body for account information -->
+      {{#if accounts.length}}
+        {{#each accounts as |account|}}
+          <body class="bg-gray-100">
+            <div class="container mx-auto px-4 py-12">
+              <div
+                class="max-w-lg mx-auto bg-white shadow-lg rounded-lg overflow-hidden"
+              >
+                <div class="px-6 py-4">
+                  <div class="font-bold text-xl mb-2">{{account.id}}</div>
+                  <!-- display account id since we don't have type name for account-->
+                  <div class="border-t border-gray-300 mt-6 pt-6">
+                    <div class="text-gray-700 font-bold mb-2">Account Balance</div>
+                    <div class="text-3xl font-bold">${{account.balance}}</div>
+                  </div>
+                  <div class="border-t border-gray-300 mt-6 pt-6">
+
+                    {{#if account.transactions.length}}
+                      <!-- if transaction for that account exist -->
+                      <div class="text-gray-700 font-bold mb-2">Recent
+                        Transactions</div>
+                      <ul class="divide-y divide-gray-300">
+                        {{#each account.transactions as |transaction|}}
+                          <!-- loops thru transaction information -->
+                          <li class="py-4 flex items-center justify-between">
+                            <div>
+                              <span
+                                class="font-bold text-gray-700"
+                              >{{transaction.title}}</span>
+                              <p
+                                class="text-gray-600 text-sm"
+                              >{{transaction.transaction_desc}}</p>
+                            </div>
+
+                            {{#if (is_negative transaction.amount)}}
+                              <div class="text-red-500 font-bold">-${{absNum
+                                  transaction.amount
+                                }}</div>
+                            {{else}}
+                              <div
+                                class="text-green-500 font-bold"
+                              >${{transaction.amount}}</div>
+                            {{/if}}
+
+                          </li>
+                        {{/each}}
+
+                      </ul>
+                    {{/if}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </body>
+        {{/each}}
+      {{/if}}
+
+    </main>
+  </div>
+</body>
+
+<script src="/JS/account.js"></script>

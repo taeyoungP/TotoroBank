@@ -1,5 +1,5 @@
 body {
-  background-image: url(/public/assets/Totoro-BG.jpg);
+  background-image: url(./assets/Totoro-BG.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -17,9 +17,4 @@ nav {
 
 main {
   display: flex;
-}
-
-#disclaimer {
-  background-color: #e7e2de;
-  opacity: 75%;
 }
