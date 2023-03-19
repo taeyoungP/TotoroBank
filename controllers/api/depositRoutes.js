@@ -17,7 +17,7 @@ router.get('/', withAuth, async (req, res) => {
         });
 
         const user = userData.get({ plain: true });
-        console.log(user);
+        //console.log(user);
 
         //res.status(200).json(userData);
         

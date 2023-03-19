@@ -35,13 +35,12 @@
 
             <div class="flex justify-between items-center mb-4 ">
                 <h3 class="text-lg font-bold">Deposit:</h3>
-                <form class="flex items-center opacity-100" action="#" method="POST">
+                <form class="flex items-center opacity-100 deposit-form" action="#" method="POST">
                     <label for="deposit-amount" class="sr-only">Deposit amount:</label>
-                    <select id="account" name="account"
-                        class="mr-4 px-4 py-2 border rounded-md focus:outline-none  focus:ring-blue-100">
+                    <select id="account" name="account" class="mr-4 px-4 py-2 border rounded-md focus:outline-none focus:ring-blue-100">
                         {{#if accounts.length}}
                             {{#each accounts as |account|}}
-                                <option value="account1" data-id={{account.id}}>{{account.id}}</option> <!-- Account id since there is no field for account type field in data model-->
+                                <option class="account-input" value="account{{account.id}}" data-id={{account.id}}>{{account.id}}</option> <!-- Account id since there is no field for account type field in data model-->
                             {{/each}}
                         {{/if}}
                     </select>
