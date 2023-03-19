@@ -15,7 +15,9 @@ const signupFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace("/homepage");
     } else {
-      alert(response.statusText);
+      alert(
+        "Please include atleast 1 uppercase,1 lowercase,1 number & 1 special character"
+      );
     }
   }
 };

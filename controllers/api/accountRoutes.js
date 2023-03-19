@@ -1,5 +1,3 @@
-//add put method (update) for transaction to account (())
-
 const router = require("express").Router();
 const { Account, User, Transaction } = require("../../models");
 const withAuth = require("../../utils/auth");
@@ -45,13 +43,12 @@ router.get("/:id", withAuth, async (req, res) => {
     });
 
     res.status(200).json(accountData);
-    //res.render('viewAccount'); //to see one account
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-//add post method for adding transaction to account //POST api/accounts/2 -> add transaction to account where account_id=2
+//add post method for adding transaction to account
 router.post("/:id", withAuth, async (req, res) => {
   try {
     const newTransaction = await Transaction.create({
@@ -64,21 +61,5 @@ router.post("/:id", withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
-
-//Future Development
-//router.put(/transfer/:id/:target_id ){ User.update { req.session.user_id ~ data }}
-// user.update (target_id, ~data)
-/*router.put('/transfer/:id', withAuth, async (req, res) => {
-    try {
-        const updatedAccount = await Account.update({
-
-        });
-
-        res.status(200).json(updatedAccount);
-
-    } catch (err) {
-        res.status(400).json(err);
-    }
-});*/
 
 module.exports = router;

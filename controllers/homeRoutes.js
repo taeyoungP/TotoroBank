@@ -1,6 +1,5 @@
 // (/ => login page)
 // (/homepage => main page once user logged in)
-// (/viewAccount => user's account information) (accessible from nav bar)
 
 const router = require("express").Router();
 const { User, Account, Transaction } = require("../models");
@@ -21,25 +20,27 @@ router.get("/", async (req, res) => {
 router.get("/deposit", async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
-        include: [{
-            model: Account,
-            include: {
-              model: Transaction
-            }
-          }]
+      include: [
+        {
+          model: Account,
+          include: {
+            model: Transaction,
+          },
+        },
+      ],
     });
 
     const user = userData.get({ plain: true });
-    
-    res.render('deposit', { //render deposit handlebars
-        ...user,
-        logged_in: true //to grab user account data, (user.)accounts
-        //#each accounts as |account|
-    });
 
-} catch (err) {
+    res.render("deposit", {
+      //render deposit handlebars
+      ...user,
+      logged_in: true, //to grab user account data, (user.)accounts
+      //#each accounts as |account|
+    });
+  } catch (err) {
     res.status(400).json(err);
-}
+  }
 });
 
 router.get("/login", async (req, res) => {
@@ -77,33 +78,6 @@ router.get("/homepage", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-/*router.get('/account', withAuth, async (req, res) => {
-    try {
-        const userData = await User.findByPk(req.session.user_id, {
-            attributes: { exclude: ['password'] },
-            include: [{
-                model: Account,
-                include: {
-                    model: Transaction
-                }
-            }
-            ],
-        });
-
-
-        const user = userData.get({ plain: true });
-
-        res.render('account', { //render account.handlebars for loggedin user
-            ...user,
-            logged_in: true
-        });
-
-        //res.status(200).json(userData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});*/
 
 // added routes for handling error
 
