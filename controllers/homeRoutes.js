@@ -19,7 +19,27 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/deposit", async (req, res) => {
-  res.render("deposit"); //render login.handlebars
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+        include: [{
+            model: Account,
+            include: {
+              model: Transaction
+            }
+          }]
+    });
+
+    const user = userData.get({ plain: true });
+    
+    res.render('deposit', { //render deposit handlebars
+        ...user,
+        logged_in: true //to grab user account data, (user.)accounts
+        //#each accounts as |account|
+    });
+
+} catch (err) {
+    res.status(400).json(err);
+}
 });
 
 router.get("/login", async (req, res) => {
