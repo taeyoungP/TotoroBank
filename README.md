@@ -5,29 +5,21 @@
 ## Content
 
 - [Description](#description)
-- [Installation](#installation)
-- [Usage](#usage)
 - [API](#api)
-- [Internal](#internal)
 - [Future Development](#future-development)
 - [License](#license)
-- [Questions](#questions)
-- [Credits](#credits)
+- [Contributions](#contributions)
 - [Disclaimer](#disclaimer)
 
 ## Description
 
 This project is to create and simulate a bank webiste that appeals to the younger demographic, and provides a user friendly interface with ease of use that is both fun and easily navigable.
 
-## Installation
-
-## Usage
-
 ## API
 
 ### Internal
 
-- https://rapidapi.com/sparior/api/yahoo-finance15/
+- TotoroBank API
 
 ### NPM'S
 
@@ -40,46 +32,27 @@ This project is to create and simulate a bank webiste that appeals to the younge
 - MySQL2
 - Dotenv
 - Sequelize
-- Cors
 
 ## Future Development
 
-Add a character fixed to the bottom right that will be an AI helper for any questions.
-
+- Add a character fixed to the bottom right that will be an AI helper for any questions.
 - 'Transfer' function to transfer money between two different users. (Update their balance data and add transfer transaction)
 - Add features to 'Settings' in navigation bar (ex: light/dark mode, update user's information, and etc)
-- Create and open new account:
-  - route for creating new account has been set up, needs to implemented in front-end
-- Add 'type' for Account Model so the user can see type of their bank account and choose which account they wish to depsoit/transfer
+- Add 'type' for Account Model so the user can see the type of bank account and choose which account they wish to depsoit/transfer
 - Use Cors npm package to add security to the website
-- Implement Yahoo Finance API so the user can see stock market data & news while they are using bank website
+- Implement Yahoo Finance API so the user can see stock market data & news while they are using bank app
 
 ## License
 
 Licensed under [MIT](https://choosealicense.com/licenses/mit/) license
 
-## Questions
 
-If you have any questions please contact us:
+## Contributions
 
-GitHub:
-
-- [AustinS86](https://github.com/AustinS86),
-- [taeyoungP](https://github.com/taeyoungP),
-- [TioMeko](https://github.com/TioMeko),
-- [Soumpholphakdy](https://github.com/Soumpholphakdy)
-
-## Credits
-
-- [@AustinS86](https://github.com/AustinS86),
-- [@taeyoungP](https://github.com/taeyoungP),
-- [@TioMeko](https://github.com/TioMeko),
-- [@Soumpholphakdy](https://github.com/Soumpholphakdy)
-
-- [TailWind](https://tailwindcss.com/)
-- [Express npm]()
-- []
-- Studio Ghibli
+- Austin Stancil: <img src="https://github.com/favicon.ico" width="15"> [ AustinS86](https://github.com/AustinS86)
+- Taeyoung Park: <img src="https://github.com/favicon.ico" width="15"> [ taeyoungP](https://github.com/taeyoungP)
+- Michael Arasimowicz: <img src="https://github.com/favicon.ico" width="15"> [ TioMeko](https://github.com/TioMeko)
+- Khamla Soumpholphakdy: <img src="https://github.com/favicon.ico" width="15"> [ Soumpholphakdy](https://github.com/Soumpholphakdy)
 
 ## Disclaimer
 
@@ -99,23 +72,3 @@ GitHub:
     	All rights to these photos belong to Studio Ghibli, and their use in this project is done so under fair use
     	principles. This use of the photos is not intended for commercial purposes and is solely for educational and
     	informational purposes.
-
-    	## Background Image for deposit page
-
-https://cdna.artstation.com/p/assets/images/images/026/577/962/large/ciara-espiritu-asset.jpg?1589161690
-
-## Background banner deposit page
-
-https://media.tenor.com/qhcRVSoKQ-YAAAAi/totoro-discord.gif
-
-## Background Image for sign-up page
-
-https://studioghiblimovies.com/wp-content/uploads/2019/02/4b113811930e0a72f89c48de2421f29e10-1024x640.jpg
-
-## Background image for login page
-
-https://studioghiblimovies.com/wp-content/uploads/2019/02/d6qy8ki-177cdc00-5d5b-4ab0-ba9b-1346253df5a81.jpg
-
-## Favicon, Catbus, and Icon
-
-DONE BY Taeyoung Park
