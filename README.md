@@ -1,19 +1,16 @@
 # TotoroBank
 
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
-
 ## Content
 
 - [Description](#description)
 - [API](#api)
 - [Future Development](#future-development)
-- [License](#license)
 - [Contributions](#contributions)
 - [Disclaimer](#disclaimer)
 
 ## Description
 
-This project is to create and simulate a bank webiste that appeals to the younger demographic, and provides a user friendly interface with ease of use that is both fun and easily navigable.
+This project is to create and simulate a bank website that appeals to the younger demographic, and provides a user friendly interface with ease of use that is both fun and easily navigable.
 
 ## API
 
@@ -41,10 +38,6 @@ This project is to create and simulate a bank webiste that appeals to the younge
 - Add 'type' for Account Model so the user can see the type of bank account and choose which account they wish to depsoit/transfer
 - Use Cors npm package to add security to the website
 - Implement Yahoo Finance API so the user can see stock market data & news while they are using bank app
-
-## License
-
-Licensed under [MIT](https://choosealicense.com/licenses/mit/) license
 
 
 ## Contributions
